@@ -3,8 +3,8 @@
     "input_csv_folder_path": "C:/Projects/DC-validation/202101_PAT/Input/PAT_calibration_input",
     "test_data": "Experiment9_200707_input.csv",
     "year_input": 2019,
-    "measure_run_csv_path": "C:/Projects/DC-validation/202101_PAT/Test_9/Experiment9_200707_input_out.csv",
-    "measure_meter_csv_path": "C:/Projects/DC-validation/202101_PAT/Test_9/Experiment9_200707_input_metered.csv",
+    "measure_run_csv_path": "C:/Projects/DC-validation-blb/202101_PAT/Test_9/Experiment9_200707_input_out.csv",
+    "measure_meter_csv_path": "C:/Projects/DC-validation-blb/202101_PAT/Test_9/Experiment9_200707_input_metered.csv",
     "applicable": true
   },
   "ModelInputRCoil": {

@@ -1,0 +1,17 @@
+{
+   "created_at" : "20210130T131701Z",
+   "file_paths" : 
+   [
+      "C:/Projects/DC-validation-blb/202101_PAT/Test_9"
+   ],
+   "hash" : "1A398FBD",
+   "measure_paths" : 
+   [
+      "C:/Projects/DC-validation-blb/202101_PAT/Measure Development"
+   ],
+   "seed_file" : "C:/Projects/DC-validation-blb/202101_PAT/Test_9_convert/in.osm",
+   "steps" : 
+   [],
+   "updated_at" : "20210130T131701Z",
+   "weather_file" : "C:/Projects/DC-validation-blb/202101_PAT/in.epw"
+}

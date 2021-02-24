@@ -540,7 +540,7 @@ ElectricEquipment,
 ElectricEquipment,
   Conditioned_Space,                      !- Name
   ConditionedZone,                        !- Zone or ZoneList Name
-  conditioned_space_load,                !- Schedule Name
+  RADIATION_LOAD_SCHEDULE,                !- Schedule Name
   EquipmentLevel,                         !- Design Level Calculation Method
   1,                                      !- Design Level {W}
   ,                                       !- Watts per Zone Floor Area {W/m2}
@@ -550,64 +550,6 @@ ElectricEquipment,
   ,                                       !- Fraction Lost
   General;                                !- End-Use Subcategory
 
-ElectricEquipment,
-  Plenum_Space,                           !- Name
-  PlenumZone,                             !- Zone or ZoneList Name
-  plenum_space_load,               !- Schedule Name
-  EquipmentLevel,                         !- Design Level Calculation Method
-  1,                                      !- Design Level {W}
-  ,                                       !- Watts per Zone Floor Area {W/m2}
-  ,                                       !- Watts per Person {W/person}
-  ,                                       !- Fraction Latent
-  ,                                       !- Fraction Radiant
-  ,                                       !- Fraction Lost
-  General;                                !- End-Use Subcategory
-
-ExternalInterface,
-  FunctionalMockupUnitExport;  !- Name of External Interface
-
-ExternalInterface:FunctionalMockupUnitExport:From:Variable,
-  ConditionedZone,  !- Output:Variable Index Key Name
-  Zone Mean Air Temperature,  !- Output:Variable Name
-  conditioned_zone_temp;         !- FMU Variable Name
-
-ExternalInterface:FunctionalMockupUnitExport:From:Variable,
-  PlenumZone,  !- Output:Variable Index Key Name
-  Zone Mean Air Temperature,  !- Output:Variable Name
-  plenum_zone_temp;         !- FMU Variable Name
-
-ExternalInterface:FunctionalMockupUnitExport:From:Variable,
-  Environment,  !- Output:Variable Index Key Name
-  Site Outdoor Air Drybulb Temperature,  !- Output:Variable Name
-  site_outdoor_air_drybulb_temperature;         !- FMU Variable Name
-
-ExternalInterface:FunctionalMockupUnitExport:From:Variable,
-  Conditioned_Space,  !- Output:Variable Index Key Name
-  Electric Equipment Total Heating Rate,  !- Output:Variable Name
-  conditioned_space_total_heating_rate;         !- FMU Variable Name  
-
-ExternalInterface:FunctionalMockupUnitExport:From:Variable,
-  Plenum_Space,  !- Output:Variable Index Key Name
-  Electric Equipment Total Heating Rate,  !- Output:Variable Name
-  plenum_space_total_heating_rate;         !- FMU Variable Name 
-
-ExternalInterface:FunctionalMockupUnitExport:From:Variable,
-  ConditionedZone_chilled_water_gain,  !- Output:Variable Index Key Name
-  Electric Equipment Total Heating Rate,  !- Output:Variable Name
-  chilled_water_gain_total_heating_rate;         !- FMU Variable Name 
-  
-ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
-  plenum_space_load,  !- Schedule Name
-  Dimensionless 1,         !- Schedule Type Limits Names
-  plenum_space_load,                       !- FMU Variable Name
-  0;                       !- Initial Value
-
-ExternalInterface:FunctionalMockupUnitExport:To:Schedule,
-  conditioned_space_load,  !- Schedule Name
-  Dimensionless 1,         !- Schedule Type Limits Names
-  conditioned_space_load,                       !- FMU Variable Name
-  0;                       !- Initial Value
-  
 ZoneControl:Thermostat,
   ConditionedZone Thermostat,             !- Name
   ConditionedZone,                        !- Zone or ZoneList Name
@@ -782,6 +724,19 @@ BuildingSurface:Detailed,
   0.27, 0, 1.80477854883065e-16,          !- X,Y,Z Vertex 2 {m}
   0, 0, 1.80477854883065e-16,             !- X,Y,Z Vertex 3 {m}
   0, 0.445000000000001, 1.80477854883065e-16; !- X,Y,Z Vertex 4 {m}
+
+ElectricEquipment,
+  Plenum_Space,                           !- Name
+  PlenumZone,                             !- Zone or ZoneList Name
+  CONVECTIVE_LOAD_SCHEDULE,               !- Schedule Name
+  EquipmentLevel,                         !- Design Level Calculation Method
+  1,                                      !- Design Level {W}
+  ,                                       !- Watts per Zone Floor Area {W/m2}
+  ,                                       !- Watts per Person {W/person}
+  ,                                       !- Fraction Latent
+  ,                                       !- Fraction Radiant
+  ,                                       !- Fraction Lost
+  General;                                !- End-Use Subcategory
 
 ZoneControl:Thermostat,
   PlenumZone Thermostat,                  !- Name
